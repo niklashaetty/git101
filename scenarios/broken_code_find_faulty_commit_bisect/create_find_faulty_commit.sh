@@ -1,9 +1,11 @@
 #!/bin/bash
-SUCCESS="Test was successful! :)"
-FAIL="Test FAILED;("
+SUCCESS="true"
+FAIL="false"
 WORD_LIST_FILE_PATH="/usr/share/dict/words"
 
 mkdir scenario_find_faulty_commit
+chmod +x test.sh
+cp test.sh scenario_find_faulty_commit/
 cd scenario_find_faulty_commit
 git init
 touch test_results
@@ -42,3 +44,5 @@ do
   git add test_file_please_ignore
   git commit -m "${WORD} ${WORD2}"
 done
+
+
